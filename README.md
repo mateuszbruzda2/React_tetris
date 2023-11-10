@@ -1,8 +1,16 @@
 # React_tetris
 Tetris game with React Hooks. Tetris from scratch using hooks like useState, useEffect, useCallback and custom hooks. Styling is done with Styled Components.
 
+<br/>
 
-# About React App:
+## Technologies used
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![CSS](https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white)
+
+
+
+
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts
 In the project directory, you can run:
