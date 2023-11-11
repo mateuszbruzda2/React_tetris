@@ -5,9 +5,14 @@ Tetris game with React Hooks. Tetris from scratch using hooks like useState, use
 
 ## Technologies used
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![CSS](https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![CSS](https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white)![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 
 
+# Sources
+
+    1. The font (author: Sizenko Alexander, www.styleseven.com, The fonts Pixel LCD-7 is freeware for home using.)
+    2. useInterval.js hook created by Dan Abramov.
+    3. Background picture from free source (under the Pixabay Free Content License) https://pixabay.com/photos/mountains-lake-reflection-alps-1624284/
 
 
 # Getting Started with Create React App
