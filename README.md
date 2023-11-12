@@ -1,5 +1,30 @@
+# Notes from author
+A project for a MegaK course.
+Due to the broken networkmanager.pl portal, I was unable to fully host the application.
+The main idea of ​​the app was a website with a Tetris game. Unfortunately, I was not able to fully complete the functionality and the application as of 13th November 2023 has the option of playing the basic game along with counting points, levels and acceleration.
+
+![screen1](image.png)![Alt text](image-1.png)
+
 # React_tetris
 Tetris game with React Hooks. Tetris from scratch using hooks like useState, useEffect, useCallback and custom hooks. Styling is done with Styled Components.
+
+<br/>
+
+## Technologies used
+
+
+
+## Technologies used
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![CSS](https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white)![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
+
+
+### Sources
+
+    1. The font (author: Sizenko Alexander, www.styleseven.com, The fonts Pixel LCD-7 is freeware for home using.)
+    2. useInterval.js hook created by Dan Abramov https://overreacted.io/making-setinterval-declarative-with-react-hooks/
+    3. Background picture from free source (under the Pixabay Free Content License) https://pixabay.com/photos/mountains-lake-reflection-alps-1624284/
+    
 
 ### Preconditions to start game:
 To start Game locally on your PC you will need to have VSC (or other code editor).
@@ -8,20 +33,6 @@ Inside main directory run following commands on terminal:
 'npm instal' it will install all dependences from json files
 'npm start' it will open on you browser 'http://localhost:3000/' where you will be able to enjoy the game.
 'ctrl+C' on terminal will shout down the app.
-
-<br/>
-
-## Technologies used
-
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![CSS](https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white)![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
-
-
-## Sources
-
-    1. The font (author: Sizenko Alexander, www.styleseven.com, The fonts Pixel LCD-7 is freeware for home using.)
-    2. useInterval.js hook created by Dan Abramov https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-    3. Background picture from free source (under the Pixabay Free Content License) https://pixabay.com/photos/mountains-lake-reflection-alps-1624284/
-    
 
 
 ## Getting Started with Create React App
