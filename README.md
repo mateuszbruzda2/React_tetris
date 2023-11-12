@@ -1,6 +1,14 @@
 # React_tetris
 Tetris game with React Hooks. Tetris from scratch using hooks like useState, useEffect, useCallback and custom hooks. Styling is done with Styled Components.
 
+# Preconditions to start game:
+To start Game locally on your PC you will need to have VSC (or other code editor).
+Download game code from this github.
+Inside main directory run following commands on terminal:
+'npm instal' it will install all dependences from json files
+'npm start' it will open on you browser 'http://localhost:3000/' where you will be able to enjoy the game.
+'ctrl+C' on terminal will shout down the app.
+
 <br/>
 
 ## Technologies used
@@ -16,6 +24,8 @@ Tetris game with React Hooks. Tetris from scratch using hooks like useState, use
 
 
 # Getting Started with Create React App
+Please do not use 'reportWebVitals' as it will cause Errors with newStage (hook inside forEach loop), please use 'serviceWorker' instead
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts
 In the project directory, you can run:

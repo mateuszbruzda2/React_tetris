@@ -19,12 +19,15 @@ export const useStage = (player, resetPlayer) => {
             player.tetromino.forEach((row, y) => {
                 row.forEach((value, x) => {
                     if(value !== 0){
+                        if (
+                            newStage[y + player.pos.y] &&
+                            newStage[y + player.pos.y][x + player.pos.x]
+                          ){
                         newStage[y + player.pos.y][x + player.pos.x] = [
                             //this is how we know we should clear tetraminor in next render if we set it to merge we know it has colided
-                            //
                             value,
                             `${player.collided ? 'merged' : 'clear'}`,
-                        ];
+                        ];}
                     }
                 });
             });

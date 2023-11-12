@@ -21,7 +21,7 @@ const Tetris = () => {
     const [dropTime, setDropTime] = useState(null);
     const [gameOver, setGameOver] = useState(false);
     //custom hooks
-    const [player, updatePlayerPos, resetPlayer] = usePlayer();
+    const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
     const [stage, setStage] = useStage(player, resetPlayer);
     //this will confirm re-renders in browser console for debug purposes
     console.log('re-render');
@@ -66,13 +66,15 @@ const Tetris = () => {
 
     const move = ({keyCode}) => {
         if(!gameOver){
-            //37 stands for left, 39 for right, 40 is down  error on the keyboard
+            //37 stands for left, 39 for right, 40 is down, 38is up error on the keyboard
             if(keyCode === 37){
                 movePlayer(-1);
             } else if (keyCode === 39){
                 movePlayer(1);
             } else if (keyCode === 40){
                 dropPlayer();
+            } else if (keyCode === 38){
+                playerRotate(stage, 1);
             }
         }
     };
