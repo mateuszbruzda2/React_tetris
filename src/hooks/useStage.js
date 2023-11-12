@@ -28,6 +28,11 @@ export const useStage = (player, resetPlayer) => {
                     }
                 });
             });
+            //because when we have the new stage with updated position we than check if we collided
+            if(player.collided){
+                resetPlayer();
+            }
+
             //because we are not returning any collisions yet we have to return newStage
             return newStage;
 
@@ -36,7 +41,7 @@ export const useStage = (player, resetPlayer) => {
         setStage(prev => updateStage(prev));
     //after debugging it shows that this cause dissapearing the bricks when it ramdomly choose the same brick as previous
     // }, [player.collided, player.pos.x, player.pos.y, player.tetromino]);
-    }, [player]);
+    }, [player, resetPlayer]);
 
     return [stage, setStage];
 };
