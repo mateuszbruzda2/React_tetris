@@ -1,5 +1,4 @@
 export const TETROMINOS = {
-    //clean cell used when not showing any tetra minor 
     0: {shape: [[0]], color: '0, 0, 0'},
     I:{
         shape: [
@@ -10,7 +9,6 @@ export const TETROMINOS = {
         ],
         color: '80,227,230',
     },
-    //objects with all tetraminor shapes
     J:{
         shape: [
             [0, 'J', 0],
@@ -60,7 +58,6 @@ export const TETROMINOS = {
     },
 }
 
-//function that generate random tetraminor
 export const randomTetramino = () =>{
     const tetraminos = 'IJLOSTZ';
     const randTetramino = tetraminos[Math.floor(Math.random() * tetraminos.length)];

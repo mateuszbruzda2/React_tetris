@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// this will add shadowing and modify css conditionally with props 
 export const StyledCell = styled.div`
     width: auto;
     background: rgba(${props => props.color}, 0.8);
