@@ -6,8 +6,11 @@ import { createStage, checkCollision } from "../gameHelpers";
 import { StyledTetrisWrapper, StyledTetris } from "./styles/StyledTetris";
 
 //custom hooks
+
 import { usePlayer } from "../hooks/usePlayer";
 import { useStage } from "../hooks/useStage";
+//this hook will make bricks to move
+import { useInterval } from "../hooks/useInterval"
 
  //Components
 import Stage from "./Stage";
@@ -39,6 +42,7 @@ const Tetris = () => {
     const startGame = () => {
         //reset everything
         setStage(createStage());
+        setDropTime(1000);
         resetPlayer();
         setGameOver(false);
     };
@@ -54,13 +58,25 @@ const Tetris = () => {
           if(player.pos.y < 1){
             console.log("GAME OVER!");
             setGameOver(true);
+            //make sure DropTime is off when use drop down button.
             setDropTime(null)
           }
           updatePlayerPos({x: 0, y: 0, collided: true});
         }
     };
 
+    const keyUp = ({keyCode}) => {
+        if(!gameOver){
+            if(keyCode === 40) {
+                console.log("interval on");
+                setDropTime(1000);
+            }
+        }
+    }
+
     const dropPlayer = () => {
+        console.log("interval off");
+        setDropTime(null);
         drop();
     };
 
@@ -79,10 +95,14 @@ const Tetris = () => {
         }
     };
 
+    useInterval(() => {
+        drop();
+    }, dropTime);
+
     return(
         //width and higth of the complete window where we take key inputs like div that is now visible but it cover all screen and register
         //any key (mouse) press
-        <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)}>
+        <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} onKeyUp={keyUp}>
             <StyledTetris>
                 <Stage stage={stage}/>
                 <aside>

@@ -19,8 +19,9 @@ Inside main directory run following commands on terminal:
 ## Sources
 
     1. The font (author: Sizenko Alexander, www.styleseven.com, The fonts Pixel LCD-7 is freeware for home using.)
-    2. useInterval.js hook created by Dan Abramov.
+    2. useInterval.js hook created by Dan Abramov https://overreacted.io/making-setinterval-declarative-with-react-hooks/
     3. Background picture from free source (under the Pixabay Free Content License) https://pixabay.com/photos/mountains-lake-reflection-alps-1624284/
+    
 
 
 ## Getting Started with Create React App

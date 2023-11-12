@@ -8,20 +8,31 @@ export const useStage = (player, resetPlayer) => {
 
     useEffect(() => {
         setRowsCleared(0);
-
         //function with stage and reduce method can create new array so we can check if the row contains any zero
         //if it does it will not be cleared 
         //but when it will have complete row it will create the illusion that we remove the row on the stage
-        //by adding a row to our rows cleared state than a complete empy row will be added at the top of the array 
-        const sweepRows = newStage => newStage.reduce((ack, row) => {
-            if (row.findIndex(cell => cell[0] === 0) === -1){
-                setRowsCleared(prev => prev + 1);
-                ack.unshift(new Array(newStage[0].length).fill([0, 'clear']));
-                return ack;
-            }
-            ack.push(row);
-            return ack;
-        }, [])
+        //by adding a row to our rows cleared state than a complete empy row will be added at the top of the array
+        //Change the loop for sweepRows 
+        //Instead of using setRowsCleared inside the loop I used a counter and when the loop is finished I updated the state. 
+        const sweepRows = newStage => {
+            let rowsDeleted = 0;
+      
+            const stg = newStage.reduce((acc, row) => {
+              // console.log(newStage);
+              if (row.findIndex(cell => cell[0] === 0) === -1) {
+                // Row is full
+                rowsDeleted++;
+                acc.unshift(new Array(newStage[0].length).fill([0, 'clear']));
+                return acc;
+              }
+              acc.push(row);
+              return acc;
+            }, []);
+      
+      
+            setRowsCleared(rowsDeleted);
+            return stg;
+          }
 
         const updateStage = prevStage => {
             //flush the state before it will set to merge, this is why we know we should keep it in the stage because it has collided
