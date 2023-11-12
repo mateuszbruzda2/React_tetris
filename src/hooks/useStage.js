@@ -4,8 +4,25 @@ import { createStage } from "../gameHelpers";
 export const useStage = (player, resetPlayer) => {
 //inside useState give initial stage by createStage (clean board for a game)    
     const [stage, setStage] = useState(createStage());
+    const [rowsCleared, setRowsCleared] = useState(0);
 
     useEffect(() => {
+        setRowsCleared(0);
+
+        //function with stage and reduce method can create new array so we can check if the row contains any zero
+        //if it does it will not be cleared 
+        //but when it will have complete row it will create the illusion that we remove the row on the stage
+        //by adding a row to our rows cleared state than a complete empy row will be added at the top of the array 
+        const sweepRows = newStage => newStage.reduce((ack, row) => {
+            if (row.findIndex(cell => cell[0] === 0) === -1){
+                setRowsCleared(prev => prev + 1);
+                ack.unshift(new Array(newStage[0].length).fill([0, 'clear']));
+                return ack;
+            }
+            ack.push(row);
+            return ack;
+        }, [])
+
         const updateStage = prevStage => {
             //flush the state before it will set to merge, this is why we know we should keep it in the stage because it has collided
             //otherwise it's set to clear and then we can just delete it in next render
@@ -34,8 +51,9 @@ export const useStage = (player, resetPlayer) => {
             //because when we have the new stage with updated position we than check if we collided
             if(player.collided){
                 resetPlayer();
+                //as the sweepRows returns complete new stage it is needed to be also returned after collision with this newStage
+                return sweepRows(newStage);
             }
-
             //because we are not returning any collisions yet we have to return newStage
             return newStage;
 
@@ -46,5 +64,5 @@ export const useStage = (player, resetPlayer) => {
     // }, [player.collided, player.pos.x, player.pos.y, player.tetromino]);
     }, [player, resetPlayer]);
 
-    return [stage, setStage];
+    return [stage, setStage, rowsCleared];
 };
